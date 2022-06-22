@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/laraelkhoury/Desktop/so_long'
+make -C libft
+gcc -Wall -Werror -Wextra -Imlx -c main.c -o main.o
+gcc -Wall -Werror -Wextra -Imlx -c load_map.c -o load_map.o
+gcc -Wall -Werror -Wextra -Imlx -c read_map.c -o read_map.o
+gcc main.o load_map.o read_map.o -L./libft -lft -Lmlx -lmlx -framework OpenGL -framework AppKit -o so_long
+make: Leaving directory `/Users/laraelkhoury/Desktop/so_long'
+ 
