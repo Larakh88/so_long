@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 13:58:59 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/22 15:17:12 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/22 23:03:59 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,11 @@ typedef	struct s_game
 }	t_game;
 
 void	read_map(char *str, t_game *game);
+void	error_check(t_game *game);
+int		check_rec(t_game *game);
+int		check_walls(t_game *game);
+int		check_cep(t_game *game);
+void	free_g(t_game *game);
 void	load_map(t_game *game);
 void	init_img(t_game *game);
 void	draw(t_game *game, char c, int i, int j);
