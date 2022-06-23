@@ -6,7 +6,7 @@
 #    By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 13:59:41 by lel-khou          #+#    #+#              #
-#    Updated: 2022/06/22 16:23:38 by lel-khou         ###   ########.fr        #
+#    Updated: 2022/06/23 12:52:53 by lel-khou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME = so_long
 
 RM = rm -f
 
-SRC = main.c load_map.c read_map.c error_check.c
+SRC = main.c load_map.c read_map.c error_check.c ft_errors.c hooks.c
 
 OBJS = $(SRC:.c=.o)
 

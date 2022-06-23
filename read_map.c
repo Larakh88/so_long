@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 07:23:18 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/22 23:04:00 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/23 23:12:51 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ void	read_map(char *str, t_game *game)
 	temp[i] = '\0';
 	game->map = ft_split(temp, '\n');
 	free (temp);
-	game->width = ft_strlen(game->map[0]) * SIZE;
+	game->width = ft_strlen(game->map[0]);
 	while (game->map[j] != 0)
 		j++;
-	game->height = j * SIZE;
+	game->height = j;
 }
