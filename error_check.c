@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:23:16 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/23 23:12:57 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/24 22:54:54 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,14 @@ int		check_cep(t_game *game)
 	c = 0;
 	p = 0;
 	e = 0;
+	//Check if we need to check for extra Player or for any extra character in the map, if not, remove the last else if
 	while (i < (game->height))
 	{
 		if (ft_strchr(game->map[i], 'C') != 0)
 			c++;
-		else if (ft_strchr(game->map[i], 'P') != 0)
+		if (ft_strchr(game->map[i], 'P') != 0)
 			p++;
-		else if (ft_strchr(game->map[i], 'E') != 0)
+		if (ft_strchr(game->map[i], 'E') != 0)
 			e++;
 		else if (ft_strchr(game->map[i], '0') == 0 && ft_strchr(game->map[i], '1') == 0)
 			return (0);
@@ -100,6 +101,11 @@ void	check_ex(char *str, t_game *game)
 	int		j;
 
 	ptr = malloc (sizeof(char) * 5);
+	if (!ptr)
+	{
+		free (ptr);
+		ft_errors("Malloc failed\n", game);
+	}
 	j = ft_strlen(str) - 4;
 	i = 0;
 
@@ -107,5 +113,6 @@ void	check_ex(char *str, t_game *game)
 		ptr[i++] = str[j++];
 	ptr[i] = '\0';
 	if (ft_strncmp(ptr, ".ber\0", 5) != 0)
-		ft_errors("Error: Wrong map extension", game);
+		ft_errors("Error: Wrong map extension\n", game);
+	free (ptr);
 }

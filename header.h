@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 13:58:59 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/23 22:36:59 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/24 22:53:48 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef	struct s_game
 
 void	check_ex(char *str, t_game *game);
 void	read_map(char *str, t_game *game);
+int		sizeofmap(char *str);
 void	error_check(t_game *game);
 int		check_rec(t_game *game);
 int		check_walls(t_game *game);
