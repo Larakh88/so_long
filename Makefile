@@ -6,11 +6,11 @@
 #    By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 13:59:41 by lel-khou          #+#    #+#              #
-#    Updated: 2022/06/23 12:52:53 by lel-khou         ###   ########.fr        #
+#    Updated: 2022/06/25 11:10:39 by lel-khou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc -g
+CC = gcc
 
 CFLAGS = -Wall -Werror -Wextra -Imlx
 
