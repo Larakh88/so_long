@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 11:38:42 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/25 13:43:48 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/25 23:54:14 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	free_game(t_game *game)
 	int	i;
 
 	i = 0;
-	if (game->map[0] != 0)
+	if (game->map)
 	{
 		while (i < game->height)
 		{

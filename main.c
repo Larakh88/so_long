@@ -6,15 +6,15 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 13:59:09 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/25 13:47:57 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/25 23:54:13 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_game    *game;
+	t_game	*game;
 
 	game = malloc(sizeof(t_game));
 	if (!game)
@@ -32,5 +32,5 @@ int main(int argc, char **argv)
 		mlx_loop(game->mlx_ptr);
 	}
 	else
-    	ft_putstr_fd("Error: Wrong number of arguments!\n", 1); 
+		ft_putstr_fd("Error: Wrong number of arguments!\n", 1);
 }

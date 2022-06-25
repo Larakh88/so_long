@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 14:13:04 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/25 13:44:44 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/25 14:02:10 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	load_map(t_game *game)
 	game->mlx_win = mlx_new_window(game->mlx_ptr, game->width * SIZE, \
 	game->height * SIZE, "Mario");
 	init_img(game);
-	while (i < game->height) 
+	while (i < game->height)
 	{
 		j = 0;
 		while (j < game->width)
@@ -41,11 +41,16 @@ void	init_img(t_game *game)
 	int		x;
 	int		y;
 
-	game->img_1 = mlx_xpm_file_to_image(game->mlx_ptr, "./img/wall.xpm", &x, &y);
-	game->img_C = mlx_xpm_file_to_image(game->mlx_ptr, "./img/colct.xpm", &x, &y);
-	game->img_P = mlx_xpm_file_to_image(game->mlx_ptr, "./img/playr.xpm", &x, &y);
-	game->img_E = mlx_xpm_file_to_image(game->mlx_ptr, "./img/exit.xpm", &x, &y);
-	game->img_0 = mlx_xpm_file_to_image(game->mlx_ptr, "./img/empty.xpm", &x, &y);
+	game->img_1 = mlx_xpm_file_to_image(game->mlx_ptr, "./img/wall.xpm", \
+	&x, &y);
+	game->img_c = mlx_xpm_file_to_image(game->mlx_ptr, "./img/colct.xpm", \
+	&x, &y);
+	game->img_p = mlx_xpm_file_to_image(game->mlx_ptr, "./img/playr.xpm", \
+	&x, &y);
+	game->img_e = mlx_xpm_file_to_image(game->mlx_ptr, "./img/exit.xpm", \
+	&x, &y);
+	game->img_0 = mlx_xpm_file_to_image(game->mlx_ptr, "./img/empty.xpm", \
+	&x, &y);
 }
 
 void	draw(t_game *game, char c, int i, int j)
@@ -54,17 +59,17 @@ void	draw(t_game *game, char c, int i, int j)
 		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_1, \
 		j * SIZE, i * SIZE);
 	if (c == 'E')
-		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_E, \
+		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_e, \
 		j * SIZE, i * SIZE);
 	if (c == 'C')
 	{
-		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_C, \
+		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_c, \
 		j * SIZE, i * SIZE);
 		game->totalc++;
 	}
 	if (c == 'P')
 	{
-		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_P, \
+		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_p, \
 		j * SIZE, i * SIZE);
 		game->x = j;
 		game->y = i;

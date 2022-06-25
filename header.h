@@ -6,20 +6,20 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 13:58:59 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/25 13:48:29 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/25 14:30:58 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef HEADER_H
 # define HEADER_H
-#include "mlx/mlx.h"
-#include "libft/libft.h"
-#include <unistd.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#define SIZE 32
+# include "mlx/mlx.h"
+# include "libft/libft.h"
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+# define SIZE 32
 
-typedef	struct s_game
+typedef struct s_game
 {
 	void	*mlx_ptr;
 	void	*mlx_win;
@@ -28,9 +28,9 @@ typedef	struct s_game
 	char	**map;
 	void	*img_1;
 	void	*img_0;
-	void	*img_P;
-	void	*img_C;
-	void	*img_E;
+	void	*img_p;
+	void	*img_c;
+	void	*img_e;
 	int		fd;
 	int		c;
 	int		p;

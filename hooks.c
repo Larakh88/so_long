@@ -6,13 +6,13 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 12:51:07 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/25 13:48:05 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/25 14:01:43 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int		key_hook(int keycode, t_game *game)
+int	key_hook(int keycode, t_game *game)
 {	
 	int	i;
 	int	j;
@@ -42,7 +42,7 @@ void	moves(t_game *game, int i, int j)
 		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_0, \
 		game->x * SIZE, game->y * SIZE);
 		game->map[game->y][game->x] = '0';
-		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_P, \
+		mlx_put_image_to_window(game->mlx_ptr, game->mlx_win, game->img_p, \
 		i * SIZE, j * SIZE);
 		game->x = i;
 		game->y = j;
@@ -59,12 +59,12 @@ void	moves(t_game *game, int i, int j)
 	}
 }
 
-int		destroy_game(t_game *game)
+int	destroy_game(t_game *game)
 {
 	mlx_destroy_image(game->mlx_ptr, game->img_1);
-	mlx_destroy_image(game->mlx_ptr, game->img_C);
-	mlx_destroy_image(game->mlx_ptr, game->img_E);
-	mlx_destroy_image(game->mlx_ptr, game->img_P);
+	mlx_destroy_image(game->mlx_ptr, game->img_c);
+	mlx_destroy_image(game->mlx_ptr, game->img_e);
+	mlx_destroy_image(game->mlx_ptr, game->img_p);
 	mlx_clear_window(game->mlx_ptr, game->mlx_win);
 	mlx_destroy_window(game->mlx_ptr, game->mlx_win);
 	free(game);

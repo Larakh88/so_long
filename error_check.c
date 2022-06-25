@@ -24,7 +24,7 @@ void	error_check(t_game *game)
 		ft_error1("Error: Map has extra parameters!\n", game);
 }
 
-int		check_rec(t_game *game)
+int	check_rec(t_game *game)
 {
 	int	i;
 
@@ -40,10 +40,10 @@ int		check_rec(t_game *game)
 	if (i != (game->height) || i == (game->width))
 		return (0);
 	else
-		return (1);	
+		return (1);
 }
 
-int		check_walls(t_game *game)
+int	check_walls(t_game *game)
 {
 	int	i;
 
@@ -61,15 +61,15 @@ int		check_walls(t_game *game)
 		if (game->map[i][0] == '1' && game->map[i][game->width - 1] == '1')
 			i++;
 		else
-			return(0);
+			return (0);
 	}
 	return (1);
 }
 
-int		check_cep(t_game *game)
+int	check_cep(t_game *game)
 {
 	int	i;
-	
+
 	i = 0;
 	while (i < (game->height))
 	{
@@ -87,7 +87,7 @@ int		check_cep(t_game *game)
 		return (0);
 }
 
-int		check_param(t_game *game)
+int	check_param(t_game *game)
 {
 	int	i;
 	int	j;
