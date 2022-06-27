@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:23:16 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/27 09:55:37 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/27 13:30:51 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int	check_param(t_game *game)
 	int	j;
 
 	i = 0;
+	game->p = 0;
 	while (game->map[i] != 0)
 	{
 		j = 0;
@@ -105,9 +106,14 @@ int	check_param(t_game *game)
 			&& game->map[i][j] != 'E' && game->map[i][j] != 'C' \
 			&& game->map[i][j] != 'P')
 				return (0);
+			if (game->map[i][j] == 'P')
+				game->p++;
 			j++;
 		}
 		i++;
 	}
-	return (1);
+	if (game->p != 1)
+		return (0);
+	else
+		return (1);
 }

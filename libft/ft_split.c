@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lel-khou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 09:57:23 by lel-khou          #+#    #+#             */
-/*   Updated: 2021/11/22 08:57:53 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/27 13:36:34 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ static size_t	ft_count(char const *s, char c)
 	j = 0;
 	while (i < ft_strlen(s))
 	{
-		while (s[i] == c)
-			i++;
 		if (s[i] == 0)
 			break ;
 		if (s[i + 1] == c || s[i + 1] == 0)
