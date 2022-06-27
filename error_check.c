@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 16:23:16 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/25 13:43:33 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/27 09:55:37 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ int	check_cep(t_game *game)
 	int	i;
 
 	i = 0;
+	game->c = 0;
+	game->e = 0;
+	game->p = 0;
 	while (i < (game->height))
 	{
 		if (ft_strchr(game->map[i], 'C') != 0)

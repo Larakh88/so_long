@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/19 14:13:04 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/25 14:02:10 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/27 09:55:34 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ void	load_map(t_game *game)
 	char	c;
 
 	i = 0;
+	game->totalc = 0;
 	game->mlx_ptr = mlx_init();
 	game->mlx_win = mlx_new_window(game->mlx_ptr, game->width * SIZE, \
 	game->height * SIZE, "Mario");

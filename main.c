@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 13:59:09 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/25 23:54:13 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/27 09:55:40 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int argc, char **argv)
 	game = malloc(sizeof(t_game));
 	if (!game)
 		ft_error1("Error: Malloc Failed!\n", game);
+	game->collectibles = 0;
+	game->moves = 0;
 	if (argc == 2)
 	{
 		if (open(argv[1], O_DIRECTORY) != -1)
