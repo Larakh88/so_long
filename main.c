@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 13:59:09 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/27 12:39:01 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/06/30 15:05:53 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ int	main(int argc, char **argv)
 		mlx_loop(game->mlx_ptr);
 	}
 	else
-		ft_putstr_fd("Error: Wrong number of arguments!\n", 1);
+		ft_error1("Error: Wrong number of arguments!\n", game);
 }
