@@ -6,7 +6,7 @@
 #    By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/08 13:59:41 by lel-khou          #+#    #+#              #
-#    Updated: 2022/06/27 10:47:58 by lel-khou         ###   ########.fr        #
+#    Updated: 2022/06/30 16:03:31 by lel-khou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,8 @@ HEADER = header.h
 
 LIBFT = libft.a
 
+MLX = libmlx.a
+
 LIBS = -L./libft -lft
 
 NAME = so_long
@@ -28,10 +30,13 @@ SRC = main.c load_map.c read_map.c error_check.c ft_errors.c hooks.c
 
 OBJS = $(SRC:.c=.o)
 
-all		: $(LIBFT) $(NAME)
+all		: $(LIBFT) $(MLX) $(NAME)
 
 $(LIBFT) :
 	@make -C libft
+	
+$(MLX) :
+	@make -C mlx
 
 %.o: %.c 
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -42,6 +47,7 @@ $(NAME): $(OBJS)
 clean: 
 	$(RM) $(OBJS)
 	@make clean -C libft
+	@make clean -C mlx
 
 fclean: clean
 	$(RM) $(NAME)
