@@ -6,7 +6,7 @@
 /*   By: lel-khou <lel-khou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 07:23:18 by lel-khou          #+#    #+#             */
-/*   Updated: 2022/06/25 23:54:11 by lel-khou         ###   ########.fr       */
+/*   Updated: 2022/07/05 11:59:51 by lel-khou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,10 @@ int	read_map(char *str, t_game *game)
 
 	byte = 1;
 	i = 0;
+	game->fd = open(str, O_RDONLY);
 	temp = malloc (sizeof(char) * sizeofmap(str, game) + 1);
 	if (!temp)
 		return (0);
-	game->fd = open(str, O_RDONLY);
-	if (game->fd == -1)
-		ft_error1("Error: Map can't be accessed!\n", game);
 	while (byte > 0)
 	{
 		byte = read(game->fd, &buff, 1);
@@ -36,8 +34,6 @@ int	read_map(char *str, t_game *game)
 		temp[i++] = buff;
 	}
 	temp[i] = '\0';
-	if ((!temp[i - 1] && !byte) || byte == -1)
-		ft_error1("Error: No Map!\n", game);
 	splittemp(temp, game);
 	return (0);
 }
@@ -69,7 +65,13 @@ int	sizeofmap(char *str, t_game *game)
 		ft_error1("Error: Map can't be accessed!\n", game);
 	while ((read(fd, &buff, 1)) > 0)
 		i++;
-	return (i);
+	if (i == 0)
+	{
+		ft_error1("Error: No Map!\n", game);
+		return (0);
+	}
+	else
+		return (i);
 }
 
 void	check_ex(char *str, t_game *game)
